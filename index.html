@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile OTP Verification</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="sender">
+        <label for="number"><h2>  Enter Mobile Number:  </h2></label>
+        <input type="text" id="number" placeholder="Enter phone number">
+        <div id="recaptcha-container"></div>
+        <button onclick="phoneAuth()">Send Code</button>
+    </div>
+    
+    <div class="container" id="verifier" style="display:none;">
+        <label for="verificationcode">Enter Verification Code:</label>
+        <input type="text" id="verificationcode" placeholder="Enter verification code">
+        <button onclick="codeVerify()">Verify Code</button>
+        <div id="verification-result" class="message"></div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
